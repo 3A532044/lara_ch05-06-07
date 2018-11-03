@@ -10,10 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/','HomeController@index');
 
 Route::pattern('student_no','s[0-9]{10}');
