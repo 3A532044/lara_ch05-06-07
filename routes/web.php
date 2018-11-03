@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','HomeController@index');
+Route::get('cool','TestController@index');
 
 Route::pattern('student_no','s[0-9]{10}');
 
@@ -27,5 +27,9 @@ Route::get('student/{student_no}',function($student_no){
 Route::get('student/{student_no}/score/{subject?}',[
     'as'=>'student.score',
     'uses'=>'StudentController@getStudentScore'
-        ])->where(['subject'=>'(chinese | english | math)']);
+        ])->where(['subject'=>'(chinese | englis
+        h | math)']);
     });
+Route::group(['namespace'=>'Cool'],function (){
+    Route::get('cool','TestController@index');
+});
